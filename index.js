@@ -11,13 +11,15 @@ var corsOptions = {
   optionsSuccessStatus: 200,
 };
 
+app.use(cors(corsOptions));
+
 require("dotenv").config();
 
 app.use(express.json());
 
 // routes
 
-app.post("/api/v1/tasks", cors(corsOptions), handleAudio);
+app.post("/api/v1/tasks", handleAudio);
 
 const port = process.env.PORT || 5000;
 

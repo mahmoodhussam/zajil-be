@@ -1,7 +1,6 @@
 const cohere = require("cohere-ai");
 const handleTextToSpeech = require("./handleTextToSpeech");
 require("dotenv").config();
-console.log("process.env", process.env);
 
 cohere.init(process.env.COHERE_KEY); // This is your trial API key
 

@@ -20,7 +20,6 @@ const handleTextToSpeech = async (from, subject, summary) => {
   return await axios
     .request(options)
     .then((response) => {
-      console.log(response.data);
       return response.data;
     })
     .catch((error) => {
