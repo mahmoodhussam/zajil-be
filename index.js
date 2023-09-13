@@ -1,14 +1,23 @@
 const express = require("express");
-const handleAudio = require("./controller/handleAutio");
 const app = express();
+const handleAudio = require("./controller/handleAutio");
+var cors = require("cors");
+
+var corsOptions = {
+  origin: [
+    "https://zajil-8q60ypklq-mahmoodhussam.vercel.app",
+    "http://localhost:3000",
+  ],
+  optionsSuccessStatus: 200,
+};
+
 require("dotenv").config();
-console.log("process.env", process.env);
 
 app.use(express.json());
 
 // routes
 
-app.post("/api/v1/tasks", handleAudio);
+app.post("/api/v1/tasks", cors(corsOptions), handleAudio);
 
 const port = process.env.PORT || 5000;
 
