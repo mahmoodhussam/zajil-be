@@ -4,7 +4,7 @@ const handleAudio = require("./controller/handleAutio");
 var cors = require("cors");
 
 var corsOptions = {
-  origin: ["https://zajil-fe.vercel.app/", "http://localhost:3000"],
+  origin: ["https://zajil-fe.vercel.app", "http://localhost:3000"],
   optionsSuccessStatus: 200,
 };
 
