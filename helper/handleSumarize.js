@@ -15,8 +15,8 @@ const handleSumarize = async (from, subject, message) => {
       temperature: 0.4,
     });
     let summary = response.body.summary;
-    // let autio = await handleTextToSpeech(from, subject, response.body.summary);
-    return { summary: summary, autio: "" };
+    let autio = await handleTextToSpeech(from, subject, response.body.summary);
+    return { summary: summary, autio: autio };
   } catch (err) {
     console.log("err", err);
   }
